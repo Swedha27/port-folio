@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Exo', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #090942;
+  background: linear-gradient(90deg, rgba(9, 9, 66, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(3, 154, 217, 1) 83%, rgb(10, 133, 234) 93%);
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated Background Circles */
+ul.circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+.circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+.circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+.circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+.circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+.circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+.circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+.circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+.circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+.circles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+/* Main Content Styling */
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+header.context {
+  margin-top: 100px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+h1 span {
+  color: #2b00d8;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #00b4d8;
+  color: #000;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #0077b6;
+}
+
+section {
+  padding: 60px 0;
+  text-align: left;
+}
+
+h2 {
+  color: #5300d8;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.project {
+  background: #1b263b;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 4px solid #00b4d8;
+  border-radius: 5px;
+}
+
+.project h3 {
+  margin-bottom: 10px;
+}
+
+#contact a {
+  color: #00b4d8;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1b263b;
+  margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  section {
+    padding: 40px 0;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
+  section {
+    padding: 60px 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 3rem;
+  }
+  header p {
+    font-size: 1.4rem;
+  }
+  section {
+    padding: 80px 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  header p {
+    font-size: 1.6rem;
+  }
+  section {
+    padding: 100px 60px;
+  }
+}
+
+
+
+
+/*
+h1 span.animated-name {
+  position: relative;
+  display: inline-block;
+  color: #008cd8;
+}
+
+h1 span.animated-name .block {
+  width: 0%;
+  height: 50%;
+  background: #b310ff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+  z-index: 0;
+}
+
+h1 span.animated-name .dot {
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background: #ffb510;
+  animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+  animation-delay: 2s;
+  display: inline-block;
+  margin-left: 5px;
+  position: relative;
+}
+
+@keyframes mainBlock {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+  }
+  100% {
+    width: 7px;
+    height: 7px;
+    opacity: 1;
+  }
+}
+
+
+h1 span.animated-name {
+  position: relative;
+  display: inline-block;
+  color: #0d05f37c;
+}
+
+h1 span.animated-name .block {
+  width: 0%;
+  height: 5px; /* Reduced to a slim 5px height 
+  background: #ffb510;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+  z-index: 0;
+}
+
+h1 span.animated-name .dot {
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background: #ffb510;
+  animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+  animation-delay: 2s;
+  display: inline-block;
+  margin-left: 5px;
+  position: relative;
+}
+
+@keyframes mainBlock {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+  }
+  100% {
+    width: 7px;
+    height: 7px;
+    opacity: 1;
+  }
+}
+
+
+
+h1 span.animated-name {
+  position: relative;
+  display: inline-block;
+  color: #2b00d8;
+}
+
+h1 span.animated-name .block {
+  width: 0%;
+  height: 5px; /* Slim block under text 
+  background: #ffb510;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+  z-index: 0;
+}
+
+h1 span.animated-name .dot {
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background: #ffb510;
+  animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+  animation-delay: 2s;
+  display: inline-block;
+  margin-left: 5px;
+  position: relative;
+}
+
+
+h1 span.animated-name {
+  position: relative;
+  display: inline-block;
+  color: #2b00d8;
+}
+
+h1 span.animated-name .text {
+  position: relative;
+  z-index: 1;
+}
+
+h1 span.animated-name .block {
+  width: 0%;
+  height: 5px;
+  background: #ffb510;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+  z-index: 0;
+}
+
+h1 span.animated-name .dot {
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background: #ffb510;
+  animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+  animation-delay: 2s;
+  display: inline-block;
+  margin-left: 5px;
+  position: relative;
+}
+*/
+
+h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+h1 .animated-name {
+  position: relative;
+  display: inline-block;
+  color: #b388eb;
+}
+
+h1 .animated-name .text {
+  position: relative;
+  z-index: 1;
+  color: #00b4d8;
+}
+
+h1 .animated-name .block {
+  width: 0%;
+  height: 5px;
+  background: #D3D3D3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+  z-index: 0;
+}
+
+h1 .animated-name .dot {
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background: #f2f2f2;
+  animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+  animation-delay: 2s;
+  display: inline-block;
+  margin-left: 5px;
+  position: relative;
+}
+
+@keyframes mainBlock {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+  }
+  100% {
+    width: 7px;
+    height: 7px;
+    opacity: 1;
+  }
+}
+
+
+
+/* Metallic Silver Sliding Block */
+.block {
+  width: 100px;
+  height: 5px;
+  margin-top: 8px;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    #d9d9d9,
+    #f2f2f2,
+    #c0c0c0,
+    #f2f2f2,
+    #d9d9d9
+  );
+  background-size: 200% 100%;
+  animation: shine 3s linear infinite;
+}
+
+/* Metallic Silver Dot */
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f5f5f5, #c0c0c0);
+}
+
+/* Shine Animation for block */
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
